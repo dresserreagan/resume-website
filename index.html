@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>All About Me</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            /* ── Section layout ── */
+            .resume-section {
+                padding: 4.5rem 0;
+            }
+            .resume-section-alt {
+                padding: 4.5rem 0;
+                background-color: #f8f9fa;
+            }
+
+            /* ── Section headings ── */
+            .section-heading {
+                font-size: 1.9rem;
+                font-weight: 700;
+                color: #212529;
+                margin-bottom: 2rem;
+                padding-bottom: 0.6rem;
+                border-bottom: 3px solid #0085A1;
+                display: inline-block;
+            }
+            .section-heading i {
+                color: #0085A1;
+                margin-right: 0.55rem;
+            }
+
+            /* ── About buttons ── */
+            .btn-primary {
+                background-color: #0085A1;
+                border-color: #0085A1;
+            }
+            .btn-primary:hover {
+                background-color: #006a80;
+                border-color: #006a80;
+            }
+
+            /* ── Education card ── */
+            .education-card {
+                background: linear-gradient(135deg, #0085A1 0%, #005f75 100%);
+                color: #fff;
+                border-radius: 0.75rem;
+                padding: 2rem 2.25rem;
+                box-shadow: 0 6px 20px rgba(0, 133, 161, 0.3);
+            }
+            .education-card h3 {
+                font-size: 1.4rem;
+                font-weight: 700;
+                margin-bottom: 0.2rem;
+            }
+            .education-card p {
+                margin-bottom: 0.2rem;
+                opacity: 0.9;
+                font-size: 0.95rem;
+            }
+            .edu-badge {
+                display: inline-block;
+                background: rgba(255, 255, 255, 0.2);
+                color: #fff;
+                border: 1px solid rgba(255, 255, 255, 0.45);
+                font-size: 0.8rem;
+                padding: 0.3em 0.85em;
+                border-radius: 50rem;
+                margin: 0.35rem 0.25rem 0 0;
+            }
+
+            /* ── Resume cards (Experience / Leadership) ── */
+            .resume-card {
+                background: #fff;
+                border: 1px solid #e9ecef;
+                border-left: 4px solid #0085A1;
+                border-radius: 0.5rem;
+                padding: 1.5rem 1.75rem;
+                margin-bottom: 1.5rem;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+                transition: box-shadow 0.2s, transform 0.2s;
+            }
+            .resume-card:hover {
+                box-shadow: 0 6px 20px rgba(0, 133, 161, 0.15);
+                transform: translateY(-2px);
+            }
+            .resume-card-title {
+                font-size: 1.1rem;
+                font-weight: 700;
+                color: #212529;
+                margin-bottom: 0.1rem;
+            }
+            .resume-card-subtitle {
+                font-style: italic;
+                color: #0085A1;
+                font-size: 0.95rem;
+                margin-bottom: 0.1rem;
+            }
+            .resume-card-meta {
+                font-size: 0.82rem;
+                color: #6c757d;
+                font-family: 'Open Sans', sans-serif;
+            }
+            .resume-card ul {
+                padding-left: 1.2rem;
+                margin-top: 0.75rem;
+                margin-bottom: 0;
+            }
+            .resume-card ul li {
+                color: #495057;
+                margin-bottom: 0.35rem;
+                font-size: 0.93rem;
+                line-height: 1.55;
+            }
+
+            /* ── Award items ── */
+            .award-item {
+                display: flex;
+                align-items: flex-start;
+                gap: 1.1rem;
+                background: #fff;
+                border: 1px solid #e9ecef;
+                border-radius: 0.5rem;
+                padding: 1.25rem 1.5rem;
+                margin-bottom: 1rem;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+                transition: box-shadow 0.2s;
+            }
+            .award-item:hover {
+                box-shadow: 0 4px 14px rgba(0, 133, 161, 0.12);
+            }
+            .award-icon {
+                color: #0085A1;
+                font-size: 1.6rem;
+                flex-shrink: 0;
+                margin-top: 0.1rem;
+            }
+            .award-item strong {
+                font-size: 1rem;
+                color: #212529;
+            }
+            .award-item p {
+                color: #6c757d;
+                font-size: 0.92rem;
+                margin-bottom: 0;
+                margin-top: 0.3rem;
+                line-height: 1.55;
+            }
+
+            /* ── Skill badges ── */
+            .skill-badge {
+                display: inline-block;
+                background: #e6f4f7;
+                color: #0085A1;
+                border: 1px solid #b8dde5;
+                border-radius: 50rem;
+                padding: 0.4em 1em;
+                margin: 0.3rem 0.2rem;
+                font-size: 0.88rem;
+                font-family: 'Open Sans', sans-serif;
+                font-weight: 600;
+            }
+
+            /* ── Hero subheading ── */
+            .masthead .subheading {
+                font-size: 0.95rem;
+                letter-spacing: 0.05em;
+            }
+        </style>
+    </head>
+    <body>
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html">Reagan Dresser</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#education">Education</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#experience">Experience</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#leadership">Leadership</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#awards">Awards</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Header -->
+        <header class="masthead" style="background-image: url('assets/img/reagan.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Reagan Dresser</h1>
+                            <span class="subheading">Benches 225 &nbsp;&middot;&nbsp; Super Rich &amp; Cool &nbsp;&middot;&nbsp; Entrepreneur &nbsp;&middot;&nbsp; Motorcycle Driver &nbsp;&middot;&nbsp; Loves the Outdoors</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- About Section -->
+        <section id="about" class="resume-section">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <h2 class="section-heading"><i class="fas fa-user"></i>About Me</h2>
+                        <p class="lead">Hi, I'm Reagan — a Marketing student at BYU's Marriott School of Business with a passion for sales, leadership, and building meaningful connections. I'm driven by a competitive spirit forged through years of varsity swimming, classical piano, and high-impact field sales roles.</p>
+                        <p>I thrive in fast-paced, people-first environments and bring a track record of results — from generating $200k in revenue in a single season to leading teams of 30 as a mission volunteer. When I'm not closing deals or studying, you'll find me on a motorcycle, in the gym, or exploring the great outdoors.</p>
+                        <div class="mt-4 d-flex flex-wrap gap-2">
+                            <a href="mailto:dresserreagan@gmail.com" class="btn btn-primary"><i class="fas fa-envelope me-2"></i>dresserreagan@gmail.com</a>
+                            <a href="tel:4802165296" class="btn btn-outline-secondary"><i class="fas fa-phone me-2"></i>(480) 216-5296</a>
+                            <a href="https://www.linkedin.com/in/reagan-h-dresser-5ab462387/" target="_blank" class="btn btn-outline-secondary"><i class="fab fa-linkedin me-2"></i>LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="resume-section-alt">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <h2 class="section-heading"><i class="fas fa-graduation-cap"></i>Education</h2>
+                        <div class="education-card">
+                            <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+                                <div>
+                                    <h3>Brigham Young University</h3>
+                                    <p>Marriott School of Business &nbsp;&middot;&nbsp; Provo, UT</p>
+                                    <p>Bachelor of Science, Marketing</p>
+                                </div>
+                                <div class="text-end">
+                                    <span style="font-size: 0.9rem; opacity: 0.85; font-family: 'Open Sans', sans-serif;">Expected Apr 2028</span>
+                                </div>
+                            </div>
+                            <div class="mt-2">
+                                <span class="edu-badge">Marketing</span>
+                                <span class="edu-badge">Accounting</span>
+                                <span class="edu-badge">Information Systems</span>
+                                <span class="edu-badge">Marketing Association Club</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="resume-section">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <h2 class="section-heading"><i class="fas fa-briefcase"></i>Experience</h2>
+
+                        <div class="resume-card">
+                            <div class="d-flex justify-content-between align-items-start flex-wrap gap-1">
+                                <div>
+                                    <div class="resume-card-title">Aptive Pest Control</div>
+                                    <div class="resume-card-subtitle">Field Sales</div>
+                                </div>
+                                <div class="text-end">
+                                    <div class="resume-card-meta">Provo, UT</div>
+                                    <div class="resume-card-meta">Nov 2025 – Present</div>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>Recruit and train new team members to maximize operational readiness for the summer season</li>
+                            </ul>
+                        </div>
+
+                        <div class="resume-card">
+                            <div class="d-flex justify-content-between align-items-start flex-wrap gap-1">
+                                <div>
+                                    <div class="resume-card-title">Advanced Window Products</div>
+                                    <div class="resume-card-subtitle">Field Sales</div>
+                                </div>
+                                <div class="text-end">
+                                    <div class="resume-card-meta">Salt Lake City, UT</div>
+                                    <div class="resume-card-meta">Jun 2025 – Sep 2025</div>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>Generated $200k in revenue by managing and converting residential leads within assigned territory</li>
+                                <li>Analyzed customer needs and pricing options to maximize deal profitability</li>
+                                <li>Drove customer acquisition by engaging 50+ decision makers daily through direct outreach</li>
+                            </ul>
+                        </div>
+
+                        <div class="resume-card">
+                            <div class="d-flex justify-content-between align-items-start flex-wrap gap-1">
+                                <div>
+                                    <div class="resume-card-title">El Encanto</div>
+                                    <div class="resume-card-subtitle">Busser</div>
+                                </div>
+                                <div class="text-end">
+                                    <div class="resume-card-meta">Cave Creek, AZ</div>
+                                    <div class="resume-card-meta">Jan 2023 – Jun 2023</div>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>Facilitated high-volume service operations by managing table turnover for 400+ guests per shift</li>
+                                <li>Collaborated with servers and kitchen staff to ensure consistent service quality</li>
+                                <li>Sustained peak-hour efficiency, improving guest flow and table reset speed</li>
+                            </ul>
+                        </div>
+
+                        <div class="resume-card">
+                            <div class="d-flex justify-content-between align-items-start flex-wrap gap-1">
+                                <div>
+                                    <div class="resume-card-title">Rainbow Ryders</div>
+                                    <div class="resume-card-subtitle">Crew Member</div>
+                                </div>
+                                <div class="text-end">
+                                    <div class="resume-card-meta">Scottsdale, AZ</div>
+                                    <div class="resume-card-meta">Jan 2023 – Jun 2023</div>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>Assisted balloon operations for customers each launch, supporting safe and timely departures</li>
+                                <li>Coordinated early-morning launch readiness across scheduled flight operations</li>
+                                <li>Upheld safety and quality standards across 12+ balloon operations</li>
+                            </ul>
+                        </div>
+
+                        <div class="resume-card">
+                            <div class="d-flex justify-content-between align-items-start flex-wrap gap-1">
+                                <div>
+                                    <div class="resume-card-title">Lifetime Fitness</div>
+                                    <div class="resume-card-subtitle">Lifeguard &middot; Swim Instructor &middot; Swim Coach</div>
+                                </div>
+                                <div class="text-end">
+                                    <div class="resume-card-meta">Phoenix, AZ</div>
+                                    <div class="resume-card-meta">Jun 2020 – Jun 2022</div>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>Ensured safety and compliance across indoor and outdoor pool operations</li>
+                                <li>Advanced to swim coach, leading training for youth athletes (ages 8–12) and engaging with parents</li>
+                                <li>Delivered structured instruction and feedback to improve swimmer performance and engagement</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership & Service Section -->
+        <section id="leadership" class="resume-section-alt">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <h2 class="section-heading"><i class="fas fa-users"></i>Leadership &amp; Service</h2>
+
+                        <div class="resume-card">
+                            <div class="d-flex justify-content-between align-items-start flex-wrap gap-1">
+                                <div>
+                                    <div class="resume-card-title">Volunteer Representative — Michigan Detroit Mission</div>
+                                    <div class="resume-card-subtitle">The Church of Jesus Christ of Latter-day Saints</div>
+                                </div>
+                                <div class="text-end">
+                                    <div class="resume-card-meta">Jun 2023 – Jun 2025</div>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>Held leadership roles coordinating teams of 20–30 members</li>
+                                <li>Managed area digital outreach for 8 months, executing Facebook advertising to support community engagement</li>
+                            </ul>
+                        </div>
+
+                        <div class="resume-card">
+                            <div class="d-flex justify-content-between align-items-start flex-wrap gap-1">
+                                <div>
+                                    <div class="resume-card-title">Boy Scouts of America</div>
+                                    <div class="resume-card-subtitle">Eagle Scout</div>
+                                </div>
+                                <div class="text-end">
+                                    <div class="resume-card-meta">Scottsdale, AZ</div>
+                                    <div class="resume-card-meta">Jan 2009 – May 2019</div>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>Participated in Troop 445 from ages 6–16, progressing through all scouting ranks</li>
+                                <li>Completed 100+ service hours and led a fundraising project raising $2,000+ for a local animal shelter</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards, Skills & Interests Section -->
+        <section id="awards" class="resume-section">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <h2 class="section-heading"><i class="fas fa-star"></i>Awards &amp; Interests</h2>
+
+                        <div class="award-item">
+                            <div class="award-icon"><i class="fas fa-person-swimming"></i></div>
+                            <div>
+                                <strong>Varsity &amp; Club Swimming — Top 3 AZ State Ranking</strong>
+                                <p>Dedicated 25+ hours weekly to training and achieved a Top 3 state ranking in Arizona, earning selection for an exclusive invitational at the University of Hawaii.</p>
+                            </div>
+                        </div>
+
+                        <div class="award-item">
+                            <div class="award-icon"><i class="fas fa-music"></i></div>
+                            <div>
+                                <strong>Competitive Classical Pianist — 8 Years</strong>
+                                <p>Trained as a competitive classical pianist, performing in dozens of formal concerts and regional competitions over an 8-year career.</p>
+                            </div>
+                        </div>
+
+                        <h4 class="mt-4 mb-3" style="font-weight: 700; color: #212529;">Skills &amp; Interests</h4>
+                        <div>
+                            <span class="skill-badge"><i class="fas fa-chart-line me-1"></i>Sales</span>
+                            <span class="skill-badge"><i class="fas fa-users me-1"></i>Team Leadership</span>
+                            <span class="skill-badge"><i class="fas fa-bullhorn me-1"></i>Marketing</span>
+                            <span class="skill-badge"><i class="fas fa-calculator me-1"></i>Accounting</span>
+                            <span class="skill-badge"><i class="fas fa-laptop me-1"></i>Information Systems</span>
+                            <span class="skill-badge"><i class="fab fa-facebook me-1"></i>Digital Advertising</span>
+                            <span class="skill-badge"><i class="fas fa-motorcycle me-1"></i>Motorcycles</span>
+                            <span class="skill-badge"><i class="fas fa-mountain me-1"></i>Outdoors</span>
+                            <span class="skill-badge"><i class="fas fa-person-swimming me-1"></i>Swimming</span>
+                            <span class="skill-badge"><i class="fas fa-music me-1"></i>Piano</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="https://www.linkedin.com/in/reagan-h-dresser-5ab462387/" target="_blank">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://www.instagram.com/reagan.dresserr/" target="_blank">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; Reagan Dresser 2024</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
