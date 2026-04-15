@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Riding — Reagan Dresser</title>
+    <link rel="stylesheet" href="motorcycles.css" />
+</head>
+<body>
+
+    <!-- Site Navigation (back to professional pages) -->
+    <nav class="site-nav">
+        <a class="brand" href="index.html">Reagan Dresser</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#experience">Experience</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="jokes.html">&#x1F3CD; Moto Jokes</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero with on-page anchor navigation -->
+    <div class="hero">
+        <h1>Life on Two Wheels</h1>
+        <p class="tagline">There's no better way to experience the road than from the saddle of a motorcycle.</p>
+        <nav class="anchor-nav">
+            <a href="#why">Why I Ride</a>
+            <a href="#gear">Gear &amp; Prep</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#video">Watch</a>
+            <a href="#data">Data</a>
+        </nav>
+    </div>
+
+    <!-- Why I Ride -->
+    <div class="section" id="why">
+        <h2>Why I Ride</h2>
+        <p>
+            Motorcycling isn't just a hobby — it's a mindset. When you're on a bike, every sense is alive:
+            the rumble of the engine, the wind, the lean into a corner. There's no radio, no notifications,
+            no distractions. It's just you, the machine, and the road ahead.
+        </p>
+        <p>
+            I got my license as a way to explore and push outside my comfort zone — and it's become one of
+            the most rewarding decisions I've made. Whether it's a quick canyon run or a long highway cruise,
+            riding clears my head like nothing else.
+        </p>
+        <p>
+            It also teaches you patience and situational awareness. You have to anticipate what drivers around
+            you are going to do, read the road surface, manage your speed, and stay calm. Those habits carry
+            into everything — sales calls, team leadership, school.
+        </p>
+    </div>
+
+    <!-- Gear & Prep — ordered list with nested unordered lists -->
+    <div class="section" id="gear">
+        <h2>Gear &amp; Pre-Ride Prep</h2>
+        <p>Every ride starts before the engine turns over. Here's how I gear up and do a safety check:</p>
+        <ol class="riding-list">
+            <li>Essential Riding Gear (ATGATT — All The Gear, All The Time)
+                <ul>
+                    <li>Full-face helmet (DOT/ECE rated)</li>
+                    <li>Armored riding jacket (CE Level 2 back and shoulder protectors)</li>
+                    <li>Riding gloves with knuckle protection</li>
+                    <li>Over-the-ankle boots with ankle support</li>
+                    <li>Riding pants with knee and hip armor</li>
+                </ul>
+            </li>
+            <li>T-CLOCS Pre-Ride Inspection
+                <ul>
+                    <li><strong>T</strong>ires — check pressure and tread depth</li>
+                    <li><strong>C</strong>ontrols — clutch, throttle, levers, cables</li>
+                    <li><strong>L</strong>ights — headlight, brake light, turn signals</li>
+                    <li><strong>O</strong>il — engine oil level and brake fluid</li>
+                    <li><strong>C</strong>hassis — frame, chain/belt tension, fasteners</li>
+                    <li><strong>S</strong>tands — side stand and center stand (if equipped)</li>
+                </ul>
+            </li>
+            <li>Route Planning
+                <ul>
+                    <li>Check weather — rain makes roads slippery, especially the first hour</li>
+                    <li>Know your fuel range and where the next station is</li>
+                    <li>Share your route with someone if riding solo</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <!-- Gallery with image -->
+    <div class="section" id="gallery">
+        <h2>On the Road</h2>
+        <p>
+            A few shots from out on the road — nothing beats a wide open highway or a twisty mountain pass.
+        </p>
+        <div class="photo-block">
+            <img
+                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=80"
+                alt="Motorcycle on an open road"
+            />
+            <p class="photo-caption">The open road — where everything else fades away. (Photo: Unsplash)</p>
+        </div>
+    </div>
+
+    <!-- Embedded YouTube video -->
+    <div class="section" id="video">
+        <h2>Worth Watching</h2>
+        <p>
+            A great breakdown of how adventure motorcycles perform both on and off-road —
+            exactly the kind of riding that gets me excited about long trips.
+        </p>
+        <div class="video-wrapper">
+            <iframe
+                src="https://www.youtube.com/embed/uJEUxMik8J4"
+                title="Adventure Motorcycle Review — MCN"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+    <!-- Embedded Tableau visualization -->
+    <div class="section" id="data">
+        <h2>Riding by the Numbers</h2>
+        <div class="viz-explainer">
+            <p>
+                This dashboard visualizes US traffic accident data — showing where, when, and how
+                crashes happen across the country. As a rider, understanding traffic patterns isn't
+                just interesting data; it's genuinely useful. Knowing which conditions, times of day,
+                and road types produce the most accidents helps you ride smarter and stay safer out there.
+            </p>
+        </div>
+        <div class="tableau-wrapper">
+            <tableau-viz
+                id="tableauViz"
+                src="https://public.tableau.com/views/US-TrafficAccidents/Dashboard1"
+                toolbar="bottom"
+                hide-tabs>
+            </tableau-viz>
+        </div>
+        <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>Reagan Dresser &mdash; <a href="index.html">Back to Resume</a> &mdash; <a href="contact.html">Contact</a> &mdash; <a href="jokes.html">&#x1F3CD; Moto Jokes</a></p>
+        <p style="margin-top: 0.5rem;">Ride safe. Gear up. Stay visible.</p>
+    </footer>
+
+</body>
+</html>

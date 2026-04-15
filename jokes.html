@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moto Jokes — Reagan Dresser</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f4f7fb;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Nav */
+        .nav {
+            background-color: #1a3a6b;
+            padding: 0.85rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav a {
+            color: #c8d8f0;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.04em;
+            transition: color 0.2s;
+        }
+
+        .nav a:hover { color: #ffffff; }
+
+        .nav .brand {
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        /* Main */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 1.5rem;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: 2.2rem;
+            color: #1a3a6b;
+            margin-bottom: 0.4rem;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: #6c757d;
+            font-size: 0.95rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* Joke card */
+        .card {
+            background: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 4px 24px rgba(26, 58, 107, 0.1);
+            padding: 2.5rem 2.5rem;
+            max-width: 520px;
+            width: 100%;
+            text-align: center;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.25rem;
+        }
+
+        .setup {
+            font-size: 1.15rem;
+            color: #212529;
+            font-weight: 600;
+            line-height: 1.55;
+        }
+
+        .punchline {
+            font-size: 1.1rem;
+            color: #1a3a6b;
+            font-style: italic;
+            line-height: 1.55;
+            border-top: 1px solid #dde6f5;
+            padding-top: 1rem;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(6px);
+            transition: opacity 0.35s ease, transform 0.35s ease;
+        }
+
+        .punchline.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hint {
+            font-size: 0.8rem;
+            color: #adb5bd;
+            letter-spacing: 0.04em;
+        }
+
+        /* Buttons */
+        .btn-row {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        button {
+            padding: 0.65em 1.75em;
+            border-radius: 0.4rem;
+            font-size: 0.95rem;
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        button:active { transform: scale(0.97); }
+
+        #revealBtn {
+            background-color: #1a3a6b;
+            color: #ffffff;
+        }
+
+        #revealBtn:hover { background-color: #2a5298; }
+
+        #nextBtn {
+            background-color: #ffffff;
+            color: #1a3a6b;
+            border: 1.5px solid #1a3a6b;
+        }
+
+        #nextBtn:hover { background-color: #dde6f5; }
+
+        /* Counter */
+        .counter {
+            margin-top: 1.5rem;
+            font-size: 0.8rem;
+            color: #adb5bd;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1.25rem;
+            font-size: 0.8rem;
+            color: #adb5bd;
+            background: #ffffff;
+            border-top: 1px solid #e9ecef;
+        }
+
+        footer a { color: #1a3a6b; text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <a class="brand" href="motorcycles.html">&#8592; Moto Page</a>
+        <a href="index.html">Reagan Dresser</a>
+    </nav>
+
+    <main>
+        <h1>&#x1F3CD; Moto Jokes</h1>
+        <p class="subtitle">Motorcycle humor. Proceed with low expectations.</p>
+
+        <div class="card">
+            <p class="setup" id="setup">Hit "New Joke" to get started.</p>
+            <p class="punchline" id="punchline"></p>
+            <p class="hint" id="hint"></p>
+        </div>
+
+        <div class="btn-row">
+            <button id="revealBtn" onclick="reveal()">Reveal Punchline</button>
+            <button id="nextBtn" onclick="nextJoke()">New Joke</button>
+        </div>
+
+        <p class="counter" id="counter"></p>
+    </main>
+
+    <footer>
+        <a href="motorcycles.html">&#8592; Back to Motorcycles</a> &nbsp;&middot;&nbsp;
+        <a href="index.html">Resume</a>
+    </footer>
+
+    <script>
+        const jokes = [
+            {
+                setup: "Why did the motorcycle fall over?",
+                punchline: "Because it was two-tired."
+            },
+            {
+                setup: "What do you call a motorcycle that doesn't start?",
+                punchline: "A push-bike."
+            },
+            {
+                setup: "Why don't motorcycles make good comedians?",
+                punchline: "Their timing belt is always off."
+            },
+            {
+                setup: "How do motorcycles stay in shape?",
+                punchline: "They do a lot of exhausting work."
+            },
+            {
+                setup: "What did the motorcycle say to its rider on a cold morning?",
+                punchline: "\"Sorry, I'm not feeling very revved up today.\""
+            },
+            {
+                setup: "Why did the motorcycle mechanic get promoted?",
+                punchline: "He really knew how to handle the clutch situations."
+            },
+            {
+                setup: "What's a motorcycle's favorite subject in school?",
+                punchline: "Exhausted History."
+            },
+            {
+                setup: "Why did the biker bring a map?",
+                punchline: "He heard the road had a lot of turns."
+            },
+            {
+                setup: "What do you call a group of motorcyclists singing together?",
+                punchline: "A chop-choir."
+            },
+            {
+                setup: "Why did the Harley rider bring a ladder to the bar?",
+                punchline: "He heard the drinks were on the house."
+            },
+            {
+                setup: "What's the difference between a Harley and a vacuum cleaner?",
+                punchline: "The position of the dirt bag."
+            },
+            {
+                setup: "Why can't motorcycles stand up by themselves?",
+                punchline: "They're two-tired — and also, they really lean on their friends."
+            },
+            {
+                setup: "What do you call a motorcycle that tells jokes?",
+                punchline: "A Yamaha-ha-ha."
+            },
+            {
+                setup: "How many bikers does it take to change a lightbulb?",
+                punchline: "Three — one to change it, one to kick over anyone who suggests a car would be easier, and one to write a blog post about the ride."
+            },
+            {
+                setup: "Why did the motorcycle stop in the middle of the road?",
+                punchline: "It saw the \"No U-turn\" sign and had an identity crisis."
+            }
+        ];
+
+        let current = -1;
+        let revealed = false;
+        const used = new Set();
+
+        function nextJoke() {
+            if (used.size === jokes.length) used.clear();
+
+            let idx;
+            do { idx = Math.floor(Math.random() * jokes.length); }
+            while (used.has(idx));
+
+            used.add(idx);
+            current = idx;
+            revealed = false;
+
+            const setup = document.getElementById('setup');
+            const punchline = document.getElementById('punchline');
+            const hint = document.getElementById('hint');
+            const counter = document.getElementById('counter');
+            const revealBtn = document.getElementById('revealBtn');
+
+            setup.textContent = jokes[idx].setup;
+            punchline.textContent = jokes[idx].punchline;
+            punchline.classList.remove('visible');
+            hint.textContent = 'Click "Reveal Punchline" when you\'re ready.';
+            revealBtn.disabled = false;
+            revealBtn.style.opacity = '1';
+            counter.textContent = `Joke ${used.size} of ${jokes.length}`;
+        }
+
+        function reveal() {
+            if (current === -1) { nextJoke(); return; }
+            const punchline = document.getElementById('punchline');
+            const hint = document.getElementById('hint');
+            const revealBtn = document.getElementById('revealBtn');
+
+            punchline.classList.add('visible');
+            hint.textContent = '';
+            revealBtn.disabled = true;
+            revealBtn.style.opacity = '0.45';
+        }
+
+        // Load first joke on page load
+        nextJoke();
+    </script>
+
+</body>
+</html>
